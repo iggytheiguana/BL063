@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="action_photo">Camera</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="app_name">StinkBug</string>
+    <string name="first">Introduction</string>
+    <string name="second">Stink bug pets of cotton</string>
+    <string name="third">Stink bug damage symptoms</string>
+    <string name="fourth">Scouting steps</string>
+    <string name="fifth">Dynamic threshold</string>
+    <string name="sixth">Decision Aid Card</string>
+    <string name="seventh">Boll sizer</string>
+    <string name="eighth">Threshold Calculator</string>
+    <string name="ninth">Summary</string>
+    <string name="action_settings">Settings</string>
+    <string name="bottom_text">STINK BUG DECISION AID</string>
+    <string name="title_activity_main">MainActivity</string>
+
+</resources>
