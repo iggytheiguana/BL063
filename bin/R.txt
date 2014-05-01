@@ -469,7 +469,8 @@ int layout seventh_frag 0x7f030020
 int layout sixth_frag 0x7f030021
 int layout support_simple_spinner_dropdown_item 0x7f030022
 int layout third_frag 0x7f030023
-int layout webview 0x7f030024
+int layout threshold_calc 0x7f030024
+int layout webview 0x7f030025
 int menu main 0x7f0c0000
 int string abc_action_bar_home_description 0x7f0b0001
 int string abc_action_bar_up_description 0x7f0b0002
@@ -501,6 +502,7 @@ int string third 0x7f0b0012
 int string title_activity_main 0x7f0b001b
 int style AppBaseTheme 0x7f0a0088
 int style AppTheme 0x7f0a0089
+int style TableTextView 0x7f0a008a
 int style TextAppearance_AppCompat_Base_CompactMenu_Dialog 0x7f0a0068
 int style TextAppearance_AppCompat_Base_SearchResult 0x7f0a0072
 int style TextAppearance_AppCompat_Base_SearchResult_Subtitle 0x7f0a0074
