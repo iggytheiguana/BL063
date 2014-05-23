@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnFocusChangeListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
@@ -16,8 +17,7 @@ import android.widget.TextView.OnEditorActionListener;
 
 import com.ncsu.stinkbug.R;
 
-public class EighthFragment extends Fragment /* implements OnEditorActionListener */{
-	private String mFile = "file:///android_asset/index.html";
+public class EighthFragment_Calc extends Fragment implements OnFocusChangeListener {
 
 	private EditText mtfWeekOfBloom, mtfNumBollsSampled, mtfDamagedBolls;
 	private TextView mlblTreatmentThreshold, mlblYourDamage;
@@ -27,11 +27,14 @@ public class EighthFragment extends Fragment /* implements OnEditorActionListene
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View v = inflater.inflate(R.layout.threshold_calc, container, false);
 
-		// WebView w = (WebView) v.findViewById(R.id.firstWebView);
-		// w.loadUrl(mFile);
 		mtfWeekOfBloom = (EditText) v.findViewById(R.id.tfWeekOfBloom);
 		mtfNumBollsSampled = (EditText) v.findViewById(R.id.tfNumBolls);
 		mtfDamagedBolls = (EditText) v.findViewById(R.id.tfDamagedBolls);
+
+		mtfWeekOfBloom.setOnFocusChangeListener(this);
+		mtfNumBollsSampled.setOnFocusChangeListener(this);
+		mtfDamagedBolls.setOnFocusChangeListener(this);
+		// focus change listener
 
 		mtfWeekOfBloom.setOnEditorActionListener(new OnEditorActionListener() {
 
@@ -80,9 +83,9 @@ public class EighthFragment extends Fragment /* implements OnEditorActionListene
 		return v;
 	}
 
-	public static EighthFragment newInstance(String text) {
+	public static EighthFragment_Calc newInstance(String text) {
 
-		EighthFragment f = new EighthFragment();
+		EighthFragment_Calc f = new EighthFragment_Calc();
 		Bundle b = new Bundle();
 		b.putString("msg", text);
 
@@ -92,7 +95,7 @@ public class EighthFragment extends Fragment /* implements OnEditorActionListene
 	}
 
 	private void calculateYourDamage() {
-		Log.e("EighthFrag", "calculateYourDamage");
+		// Log.e("EighthFrag", "calculateYourDamage");
 		/**
 		 * formula: Your damage = (Damaged bolls / num bolls sampled) * 100
 		 */
@@ -102,22 +105,15 @@ public class EighthFragment extends Fragment /* implements OnEditorActionListene
 
 			int result = (int) ((valDamagedBolls / valNumBollsSample) * 100.00);
 			mlblYourDamage.setText(result + "%");
-			Log.d("EighthFrag", String.format("Num bools: %s, Damaged Bolls: %s, result: %d", mtfNumBollsSampled
-					.getText().toString(), mtfDamagedBolls.getText().toString(), result));
+			// Log.d("EighthFrag",
+			// String.format("Num bools: %s, Damaged Bolls: %s, result: %d",
+			// mtfNumBollsSampled
+			// .getText().toString(), mtfDamagedBolls.getText().toString(),
+			// result));
 		} catch (Exception e) {
 			Log.e("Eighth Frag", "Exception: " + e.getMessage());
 		}
 	}
-
-	/*
-	 * @Override public boolean onEditorAction(TextView v, int actionId,
-	 * KeyEvent event) { int result = actionId & EditorInfo.IME_MASK_ACTION;
-	 * 
-	 * switch (result) {
-	 * 
-	 * case EditorInfo.IME_ACTION_NEXT: setTreatmentThreshold(); break; } return
-	 * false; }
-	 */
 
 	private void setTreatmentThreshold() {
 		String text = "---";
@@ -129,6 +125,13 @@ public class EighthFragment extends Fragment /* implements OnEditorActionListene
 		}
 
 		mlblTreatmentThreshold.setText(text);
+
+	}
+
+	@Override
+	public void onFocusChange(View v, boolean hasFocus) {
+		calculateYourDamage();
+		setTreatmentThreshold();
 
 	}
 }

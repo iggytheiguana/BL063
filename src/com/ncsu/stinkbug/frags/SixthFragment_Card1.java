@@ -9,7 +9,7 @@ import android.webkit.WebView;
 
 import com.ncsu.stinkbug.R;
 
-public class SixthFragment extends Fragment {
+public class SixthFragment_Card1 extends Fragment {
 	private String mFile = "file:///android_asset/Card1.html";
 
 	@Override
@@ -22,9 +22,9 @@ public class SixthFragment extends Fragment {
 		return v;
 	}
 
-	public static SixthFragment newInstance(String text) {
+	public static SixthFragment_Card1 newInstance(String text) {
 
-		SixthFragment f = new SixthFragment();
+		SixthFragment_Card1 f = new SixthFragment_Card1();
 		Bundle b = new Bundle();
 		b.putString("msg", text);
 

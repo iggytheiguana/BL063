@@ -9,12 +9,13 @@ import android.webkit.WebView;
 
 import com.ncsu.stinkbug.R;
 
-public class FirstFragment extends Fragment {
-	private String mFile = "file:///android_asset/Intro.html";
+public class SecondFragment_Photos extends Fragment {
+
+	private String mFile = "file:///android_asset/Photos.html";
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.first_frag, container, false);
+		View v = inflater.inflate(R.layout.second_frag, container, false);
 
 		WebView w = (WebView) v.findViewById(R.id.firstWebView);
 		w.loadUrl(mFile);
@@ -22,9 +23,9 @@ public class FirstFragment extends Fragment {
 		return v;
 	}
 
-	public static FirstFragment newInstance(String text) {
+	public static SecondFragment_Photos newInstance(String text) {
 
-		FirstFragment f = new FirstFragment();
+		SecondFragment_Photos f = new SecondFragment_Photos();
 		Bundle b = new Bundle();
 		b.putString("msg", text);
 

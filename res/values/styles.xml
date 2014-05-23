@@ -1,8 +1,9 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.    -->
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
@@ -16,5 +17,11 @@
     </style>
 
     <style name="TableTextView" parent="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"></style>
+
+    <style name="MenuTextView" parent="@style/TextAppearance.AppCompat.Widget.Base.ActionBar.Menu">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
 
 </resources>

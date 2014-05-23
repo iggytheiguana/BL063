@@ -9,12 +9,12 @@ import android.webkit.WebView;
 
 import com.ncsu.stinkbug.R;
 
-public class SeventhFragment extends Fragment {
-	private String mFile = "file:///android_asset/BollSizer.html";
-
+public class ThirdFragment_DamageSymptoms extends Fragment {
+	private String mFile = "file:///android_asset/DamageSymptoms.html";
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.seventh_frag, container, false);
+		View v = inflater.inflate(R.layout.third_frag, container, false);
 
 		WebView w = (WebView) v.findViewById(R.id.firstWebView);
 		w.loadUrl(mFile);
@@ -22,9 +22,9 @@ public class SeventhFragment extends Fragment {
 		return v;
 	}
 
-	public static SeventhFragment newInstance(String text) {
+	public static ThirdFragment_DamageSymptoms newInstance(String text) {
 
-		SeventhFragment f = new SeventhFragment();
+		ThirdFragment_DamageSymptoms f = new ThirdFragment_DamageSymptoms();
 		Bundle b = new Bundle();
 		b.putString("msg", text);
 
